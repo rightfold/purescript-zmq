@@ -2,6 +2,7 @@ module Network.ZMQ where
 
 import Control.Monad.Aff (Aff)
 import Control.Monad.Error.Class (withResource)
+import Data.ByteString (ByteString)
 import Prelude
 
 --------------------------------------------------------------------------------
@@ -87,3 +88,14 @@ foreign import connectSocket
    . Socket st
   -> String
   -> Aff (zmq :: ZMQ | eff) Unit
+
+foreign import send
+  :: ∀ eff st
+   . Socket st
+  -> Array ByteString
+  -> Aff (zmq :: ZMQ | eff) Unit
+
+foreign import receive
+  :: ∀ eff st
+   . Socket st
+  -> Aff (zmq :: ZMQ | eff) (Array ByteString)

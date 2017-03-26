@@ -66,3 +66,28 @@ exports.connectSocket = function(socket) {
     };
   };
 };
+
+exports.send = function(socket) {
+  return function(parts) {
+    return function(onSuccess, onError) {
+      socket.send(parts, 0, function(err) {
+        if (err !== undefined) {
+          onError(err);
+          return;
+        }
+        onSuccess(null);
+      });
+      return Control_Monad_Aff.nonCanceler;
+    };
+  };
+};
+
+exports.receive = function(socket) {
+  return function(onSuccess, onError) {
+    socket.once('message', function() {
+      var parts = [].slice.call(arguments);
+      onSuccess(parts);
+    });
+    return Control_Monad_Aff.nonCanceler;
+  };
+};
