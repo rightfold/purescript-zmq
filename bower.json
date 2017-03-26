@@ -1,5 +1,10 @@
 {
   "name": "purescript-zmq",
+  "license": "BSD-3-Clause",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rightfold/purescript-zmq.git"
+  },
   "dependencies": {
     "purescript-prelude": "^2.0.0",
     "purescript-aff": "^2.0.3",
