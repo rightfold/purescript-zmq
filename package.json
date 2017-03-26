@@ -1,0 +1,6 @@
+{
+  "name": "purescript-zmq",
+  "dependencies": {
+    "zeromq": "^4.2.0"
+  }
+}

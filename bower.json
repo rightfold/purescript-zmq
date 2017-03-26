@@ -1,0 +1,12 @@
+{
+  "name": "purescript-zmq",
+  "dependencies": {
+    "purescript-prelude": "^2.0.0",
+    "purescript-aff": "^2.0.3",
+    "purescript-transformers": "^2.3.0"
+  },
+  "devDependencies": {
+    "purescript-prelude": "^2.0.0",
+    "purescript-test-unit": "^10.1.0"
+  }
+}
